@@ -109,54 +109,69 @@ const Services = () => {
             </div>
 
             {/* MODAL RESPONSIVO */}
+            {/* MODAL RESPONSIVO CORRIGIDO */}
             {selectedService !== null && (
                 <div
-                    className="fixed inset-0 z-50 flex items-end md:items-center justify-center p-0 md:p-6 bg-[#1D1A1F]/60 backdrop-blur-sm transition-opacity duration-300"
+                    className="fixed inset-0 z-200 flex items-end md:items-center justify-center p-0 md:p-6 bg-[#1D1A1F]/60 backdrop-blur-sm transition-opacity duration-300"
                     onClick={() => setSelectedService(null)}
                 >
                     <div
-                        className="bg-white p-8 md:p-16 rounded-t-[40px] md:rounded-[60px] shadow-2xl max-w-2xl w-full relative border border-[#EEDDF6]/30 animate-modalIn max-h-[90vh] overflow-y-auto"
+                        className="bg-[#fafaf5] p-6 md:p-16 rounded-t-[32px] md:rounded-[60px] shadow-2xl max-w-2xl w-full relative border border-[#EEDDF6]/30 animate-modalIn max-h-[92vh] flex flex-col"
                         onClick={(e) => e.stopPropagation()}
                     >
-                        {/* Botão de Fechar com área de toque maior no mobile */}
+                        {/* Barra de arraste visual para mobile (opcional, dá um toque premium) */}
+                        <div className="w-12 h-1.5 bg-gray-200 rounded-full mx-auto mb-4 md:hidden" />
+
+                        {/* Botão de Fechar - Ajustado para não sumir no mobile */}
                         <button
                             onClick={() => setSelectedService(null)}
-                            className="absolute top-6 right-6 md:top-8 md:right-8 text-gray-400 hover:text-[#553C6A] p-2 transition-all"
+                            className="absolute top-4 right-4 md:top-8 md:right-8 text-gray-400 hover:text-[#553C6A] p-3 transition-all bg-white md:bg-transparent rounded-full shadow-sm md:shadow-none z-10"
                         >
-                            <X size={28} className="w-7 h-7 md:w-6 md:h-6" />
+                            <X size={24} className="md:w-7 md:h-7" />
                         </button>
 
-                        <div className="space-y-8 md:space-y-10">
-                            <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6">
-                                <div className="w-14 h-14 md:w-16 md:h-16 bg-[#F6EEF5] rounded-[20px] md:rounded-[24px] flex items-center justify-center shrink-0">
-                                    <selectedService.icon strokeWidth={1.5} className="w-7 h-7 md:w-8 md:h-8 text-[#6E5483]" />
+                        {/* Conteúdo com Scroll Interno para telas pequenas */}
+                        <div className="overflow-y-auto pr-2 custom-scrollbar">
+                            <div className="space-y-6 md:space-y-10">
+
+                                {/* Header do Modal */}
+                                <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6">
+                                    <div className="w-14 h-14 md:w-20 md:h-20 bg-[#F6EEF5] rounded-[20px] md:rounded-[28px] flex items-center justify-center shrink-0">
+                                        <selectedService.icon strokeWidth={1.2} className="w-8 h-8 md:w-10 md:h-10 text-[#6E5483]" />
+                                    </div>
+                                    <div>
+                                        <span className="text-[#6E5483] font-bold text-[10px] uppercase tracking-[2px]">Especialidade</span>
+                                        <h3 className="text-3xl md:text-5xl font-bold text-[#1D1A1F] tracking-tighter leading-[1.1] md:leading-tight mt-1">
+                                            {selectedService.title}
+                                        </h3>
+                                    </div>
                                 </div>
-                                <div>
-                                    <span className="text-[#6E5483] font-bold text-[9px] md:text-[10px] uppercase tracking-[2px]">Especialidade</span>
-                                    <h3 className="text-3xl md:text-5xl font-bold text-[#1D1A1F] tracking-tighter leading-tight mt-1">
-                                        {selectedService.title}
-                                    </h3>
+
+                                {/* Descrição */}
+                                <div className="space-y-4 md:space-y-6">
+                                    <p className="text-gray-600 text-base md:text-xl leading-relaxed">
+                                        {selectedService.longDesc}
+                                    </p>
+                                    <div className="bg-[#F6EEF5]/30 p-4 md:p-6 rounded-2xl border-l-4 border-[#6E5483]">
+                                        <p className="text-[#553C6A] text-xs md:text-sm font-medium italic leading-relaxed">
+                                            &ldquo;Nossa equipe coordenada pela Dra. Roseli está pronta para oferecer um atendimento personalizado e acolhedor.&ldquo;
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {/* CTA - Botão fixo ou no fim do scroll */}
+                                <div className="pt-4 md:pt-6">
+                                    <a
+                                        href="https://wa.me/5535997329063"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center justify-center gap-3 bg-[#553C6A] hover:bg-[#6E5483] text-white px-8 py-5 md:py-6 rounded-2xl md:rounded-full text-xs md:text-sm font-bold uppercase tracking-[2px] shadow-lg hover:shadow-xl transition-all w-full md:w-auto active:scale-95"
+                                    >
+                                        <MessageCircle size={20} />
+                                        {selectedService.cta}
+                                    </a>
                                 </div>
                             </div>
-
-                            <div className="space-y-4 md:space-y-5">
-                                <p className="text-gray-600 text-base md:text-lg leading-relaxed">
-                                    {selectedService.longDesc}
-                                </p>
-                                <p className="text-gray-400 text-xs md:text-sm italic border-l-2 border-[#F6EEF5] pl-4">
-                                    Nossa equipe coordenada pela Dra. Roseli está pronta para oferecer um atendimento personalizado e acolhedor.
-                                </p>
-                            </div>
-
-                            <a
-                                href="https://wa.me/SEUNUMERO"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center justify-center gap-3 bg-[#553C6A] hover:bg-[#6E5483] text-white px-8 py-5 rounded-full text-xs md:text-sm font-bold uppercase tracking-[2px] shadow-lg hover:shadow-xl transition-all w-full md:w-auto"
-                            >
-                                <MessageCircle size={20} />
-                                {selectedService.cta}
-                            </a>
                         </div>
                     </div>
                 </div>

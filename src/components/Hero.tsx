@@ -51,7 +51,7 @@ const Hero = () => {
                 </div>
 
                 {/* VÍDEO 2: Criança */}
-                <div className="absolute w-[160px] md:w-[200px] aspect-3/4 rounded-[40px] overflow-hidden shadow-xl z-10 -translate-y-32 translate-x-24 md:-translate-y-48 md:translate-x-40 opacity-95 hover:opacity-100 hover:scale-110 hover:z-30 transition-all duration-500 cursor-pointer group">
+                <div className="absolute w-[160px] md:w-[200px] aspect-3/4 rounded-[40px] overflow-hidden shadow-xl z-10 -translate-y-40 translate-x-34 md:-translate-y-48 md:translate-x-40 opacity-95 hover:opacity-100 hover:scale-110 hover:z-30 transition-all duration-500 cursor-pointer group">
                     <video autoPlay loop muted playsInline className="w-full h-full object-cover">
                         <source src="/videos/8088345-uhd_2160_3840_30fps.mp4" type="video/mp4" />
                     </video>
@@ -61,7 +61,7 @@ const Hero = () => {
                 </div>
 
                 {/* VÍDEO 3: Idosa */}
-                <div className="absolute w-[140px] md:w-[180px] aspect-3/4 rounded-[40px] overflow-hidden shadow-xl z-10 translate-y-40 -translate-x-24 md:translate-y-52 md:-translate-x-44 opacity-90 hover:opacity-100 hover:scale-110 hover:z-30 transition-all duration-500 cursor-pointer group">
+                <div className="absolute w-[140px] md:w-[180px] aspect-3/4 rounded-[40px] overflow-hidden shadow-xl z-10 md:translate-y-45 translate-y-45 -translate-x-30 md:-translate-x-44 opacity-90 hover:opacity-100 hover:scale-110 hover:z-30 transition-all duration-500 cursor-pointer group">
                     <video autoPlay loop muted playsInline className="w-full h-full object-cover object-top">
                         <source src="/videos/5798910-hd_1080_1920_25fps.mp4" type="video/mp4" />
                     </video>
