@@ -81,7 +81,8 @@ const AboutFounder = () => {
                     {/* Bloco 3: Prose/Formação (Order 4 no Mobile) */}
                     <div className="prose prose-gray max-w-3xl order-4 lg:order-0">
                         <p className="text-gray-500 text-sm lg:text-base leading-relaxed">
-                            Especialista em <strong>Disfagia Hospitalar</strong> e <strong>Neuropsicologia</strong>, Roseli dedica sua carreira à reabilitação de funções vitais e ao desenvolvimento da comunicação humana, sendo referência em Baependi e região há 22 anos. Sua atuação abrange desde o cuidado neonatal até o suporte em distúrbios neurodegenerativos.
+                            Especialista em <strong>Disfagia e Fonoaudiologia Hospitalar</strong>, com atuação em <strong>disfagia neonatal, adulta e geriátrica</strong>, Roseli dedica sua carreira à reabilitação de funções vitais e ao desenvolvimento da comunicação humana.
+                            Referência em Baependi e região há mais de 22 anos, sua prática abrange desde o cuidado neonatal até o suporte a pacientes com distúrbios neurológicos e neurodegenerativos.
                         </p>
                     </div>
 

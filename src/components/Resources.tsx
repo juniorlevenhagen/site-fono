@@ -45,7 +45,6 @@ const Resources = () => {
                                 {[
                                     "Trazer exames auditivos anteriores",
                                     "Relatórios de outros especialistas",
-                                    "Documento com foto e CPF"
                                 ].map((item, i) => (
                                     <li key={i} className="flex items-center gap-3 text-sm text-gray-600">
                                         <CheckCircle2 size={16} className="text-[#6E5483]" />
