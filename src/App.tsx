@@ -21,7 +21,7 @@ function App() {
         </div>
 
         {/* SOBRE - Combinando Lifespan e Founder no mesmo ID para o menu */}
-        <div id="sobre" className="scroll-mt-20">
+        <div id="sobre" className="scroll-mt-40">
           <Reveal>
             <AboutLifespan />
           </Reveal>

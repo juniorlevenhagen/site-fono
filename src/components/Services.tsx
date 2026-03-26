@@ -24,7 +24,7 @@ const Services = () => {
             desc: "Intervenção precoce focada em articulação, atrasos de linguagem e marcos de desenvolvimento.",
             longDesc: "Nossa abordagem lúdica e humanizada ajuda crianças a superarem desafios de comunicação. Focamos na correção da fala (articulação), atrasos no desenvolvimento da linguagem e alfabetização. Criamos um ambiente acolhedor onde seu filho aprende brincando, fortalecendo a confiança para interagir com o mundo.",
             icon: Users,
-            cta: "Agendar Avaliação Lúdica"
+            cta: "Agendar Avaliação"
         },
         {
             title: "Reabilitação Adulta",
