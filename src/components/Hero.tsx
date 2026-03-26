@@ -42,7 +42,16 @@ const Hero = () => {
 
                 {/* VÍDEO 1: Profissional */}
                 <div className="absolute w-[260px] h-[260px] md:w-[290px] md:h-[290px] rounded-full overflow-hidden border-6 border-white shadow-2xl z-20 hover:scale-105 transition-all duration-500 ease-in-out cursor-pointer group">
-                    <video autoPlay loop muted playsInline className="w-full h-full object-cover">
+                    <video
+                        autoPlay
+                        muted
+                        playsInline
+                        className="w-full h-full object-cover"
+                        onEnded={(e) => {
+                            e.currentTarget.currentTime = 0;
+                            e.currentTarget.play();
+                        }}
+                    >
                         <source src="/videos/5998395-hd_1080_1920_30fps.mp4" type="video/mp4" />
                     </video>
                     <div className="absolute inset-x-0 bottom-8 md:bottom-10 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30">
