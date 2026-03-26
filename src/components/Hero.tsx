@@ -16,16 +16,27 @@ const Hero = () => {
 
                 <h2 className="text-xl max-w-2xl font-medium text-[#372C3F] leading-relaxed">
                     Oferecemos fonoaudiologia completa e personalizada para crianças e adultos.
-                    Nossa clínica cobre todas as especialidades, garantindo excelência clínica e empatia em cada etapa da jornada de comunicação.
+                    Nossa clínica cobre todas as especialidades, garantindo excelência e empatia em cada etapa da jornada de comunicação.
                 </h2>
 
-                <div className="flex flex-wrap gap-4 mt-4">
-                    <button className="bg-[#553C6A] text-white font-bold px-8 py-4 rounded-full hover:bg-[#28103C] transition-all shadow-md active:scale-95 cursor-pointer">
+                <div className="flex flex-wrap gap-4 mt-8">
+                    {/* Botão Principal: Conversão Direta para WhatsApp */}
+                    <a
+                        href="https://wa.me/5535997329063?text=Ol%C3%A1%2C%20estou%20no%20site%20da%20Dra.%20Roseli%20e%20gostaria%20de%20marcar%20uma%20consulta."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-[#553C6A] text-white font-bold px-10 py-4 rounded-full hover:bg-[#28103C] transition-all shadow-lg active:scale-95 cursor-pointer flex items-center justify-center"
+                    >
                         Agendar Consulta
-                    </button>
-                    <button className="border-2 border-[#553C6A] text-[#553C6A] px-8 py-4 rounded-full font-bold hover:bg-[#553C6A]/5 transition-all cursor-pointer">
+                    </a>
+
+                    {/* Botão Secundário: Scroll Suave para a seção de Serviços */}
+                    <a
+                        href="#servicos"
+                        className="border-2 border-[#553C6A] text-[#553C6A] px-10 py-4 rounded-full font-bold hover:bg-[#553C6A]/5 transition-all cursor-pointer flex items-center justify-center"
+                    >
                         Nossos Serviços
-                    </button>
+                    </a>
                 </div>
             </div>
 

@@ -10,3 +10,7 @@
 @utility underline-animated {
   @apply relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-green-700 after:transition-transform after:duration-300 after:ease-out hover:after:origin-bottom-left hover:after:scale-x-100;
 }
+
+html {
+  scroll-behavior: smooth;
+}

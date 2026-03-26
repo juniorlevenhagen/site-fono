@@ -52,7 +52,7 @@ const AboutLifespan = () => {
                         <div className="w-full h-full bg-[#EEDDF6] flex items-center justify-center text-gray-400 italic">
                             <img
                                 src="/imagens/pexels-matvalina-17049455.jpg"
-                                alt="Atendimento Fonoaudiológico na Clínica Eleven"
+                                alt="Atendimento Fonoaudiológico na Clínica"
                                 className="w-full h-full object-cover"
                             />
                         </div>

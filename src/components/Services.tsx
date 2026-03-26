@@ -1,81 +1,181 @@
+import { useState, type ComponentType } from 'react'; // Importando o hook de estado
+import { Users, Activity, BrainCircuit, Ear, MoveRight, X, MessageCircle } from 'lucide-react'; // Importando novos ícones
+
+type ServiceIcon = ComponentType<{
+    size?: number;
+    strokeWidth?: number;
+    className?: string;
+}>;
+
+type Service = {
+    title: string;
+    desc: string;
+    longDesc: string;
+    icon: ServiceIcon;
+    cta: string;
+};
+
 const Services = () => {
-    const listaServicos = [
+    // ESTADO: Armazena o serviço selecionado para abrir o modal. Começa como 'null'.
+    const [selectedService, setSelectedService] = useState<Service | null>(null);
+
+    // Lista de serviços com os componentes de ícone e CONTEÚDO DETALHADO para o modal
+    const listaServicos: Service[] = [
         {
-            title: "Linguagem e Fala",
-            desc: "Apoio no desenvolvimento da comunicação verbal e escrita, desde as primeiras palavras.",
-            icon: "🗣️"
+            title: "Terapia Pediátrica",
+            desc: "Intervenção precoce focada em articulação, atrasos de linguagem e marcos de desenvolvimento.",
+            longDesc: "Nossa abordagem lúdica e humanizada ajuda crianças a superarem desafios de comunicação. Focamos na correção da fala (articulação), atrasos no desenvolvimento da linguagem e alfabetização. Criamos um ambiente acolhedor onde seu filho aprende brincando, fortalecendo a confiança para interagir com o mundo.",
+            icon: Users,
+            cta: "Agendar Avaliação Lúdica"
         },
         {
-            title: "Voz e Dicção",
-            desc: "Aperfeiçoamento da clareza vocal para profissionais e reabilitação de patologias.",
-            icon: "🎭"
+            title: "Reabilitação Adulta",
+            desc: "Suporte especializado para recuperação pós-AVC, TCE e distúrbios neurodegenerativos.",
+            longDesc: "Recuperar a autonomia na comunicação é vital após eventos como AVC ou traumatismos. Oferecemos terapia especializada para reabilitar a fala, linguagem e deglutição, adaptando o tratamento às necessidades de cada paciente. Nosso objetivo é devolver a qualidade de vida e a capacidade de expressão no dia a dia.",
+            icon: Activity,
+            cta: "Solicitar Plano de Reabilitação"
         },
         {
             title: "Motricidade Orofacial",
             desc: "Tratamento de funções vitais como respiração, mastigação e deglutição segura.",
-            icon: "✨"
+            longDesc: "O equilíbrio da musculatura facial é essencial para respirar, mastigar e engolir corretamente. Tratamos disfunções que afetam essas funções (como respiração bucal ou dificuldade em engolir), garantindo mais segurança e conforto. Uma função orofacial correta é a base para uma fala clara e um sorriso saudável.",
+            icon: BrainCircuit,
+            cta: "Marcar Consulta Funcional"
         },
         {
-            title: "Processamento Auditivo",
-            desc: "Avaliação e treino das habilidades auditivas para melhor compreensão e foco.",
-            icon: "👂"
+            title: "Audição",
+            desc: "Avaliação e treino das habilidades auditivas e do processamento central.",
+            longDesc: "Ouvir bem é diferente de entender bem. Avaliamos e treinamos o Processamento Auditivo Central (PAC), ajudando o cérebro a interpretar melhor os sons. Ideal para quem sente dificuldade de foco em ambientes barulhentos ou tem atrasos de aprendizado. Treinar a audição é potencializar a comunicação e o aprendizado.",
+            icon: Ear,
+            cta: "Agendar Treino Auditivo"
         }
     ];
 
     return (
-        <section className="py-24 px-12 md:px-24 bg-[#FBF8FB] w-full border-t border-[#F6EEF5]">
-            {/* Removi o max-w para alinhar com a amplitude do seu Hero */}
+        <section className="py-24 px-12 md:px-24 bg-[#FBF8FB] w-full border-t border-[#F6EEF5] relative">
             <div className="flex flex-col gap-20 w-full">
 
-                {/* CABEÇALHO DA SEÇÃO: Ajustado para o padrão Eleven */}
+                {/* CABEÇALHO DA SEÇÃO */}
                 <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-10 pb-16 border-b border-[#EEDDF6]/50">
-
-                    {/* O segredo está no 'space-y-6' aqui embaixo */}
                     <div className="max-w-3xl space-y-6">
-                        <span className="inline-block bg-[#F6EEF5] px-4 py-1.5 rounded-full text-[10px] font-bold text-[#553C6A] tracking-[2px] uppercase">
+                        <span className="inline-block bg-[#EEDDF6]/60 px-5 py-2 rounded-full text-[10px] font-bold text-[#553C6A] tracking-[3px] uppercase">
                             Nossas Especialidades
                         </span>
-
                         <h2 className="text-5xl md:text-7xl font-bold text-[#1D1A1F] tracking-tighter leading-[0.95]">
                             Soluções <span className="text-[#6E5483] italic font-medium">Clínicas</span> <br />
                             Especializadas.
                         </h2>
+                        <p className="text-gray-500 text-lg leading-relaxed lg:mb-2 max-w-3xl">
+                            Ciência e empatia aplicadas à saúde da comunicação em todas as fases da vida.
+                        </p>
                     </div>
-
-                    <p className="text-gray-500 max-w-sm text-lg leading-relaxed lg:mb-2">
-                        Ciência e empatia aplicadas à saúde da comunicação em todas as fases da vida.
-                    </p>
                 </div>
 
-                {/* GRID DE CARDS: Alinhamento consistente */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {listaServicos.map((servico, index) => (
-                        <div
-                            key={index}
-                            className="group bg-white p-10 rounded-[50px] transition-all duration-700 hover:bg-[#553C6A] hover:-translate-y-4 cursor-pointer shadow-[0_20px_50px_-20px_rgba(85,60,106,0.08)] hover:shadow-[0_30px_60px_-15px_rgba(85,60,106,0.3)] flex flex-col h-full border border-white"
-                        >
-                            {/* Ícone com fundo suave */}
-                            <div className="w-16 h-16 bg-[#FBF8FB] rounded-[24px] flex items-center justify-center text-3xl mb-12 group-hover:bg-white/10 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                                {servico.icon}
+                {/* GRID DE CARDS */}
+                {/* GRID DE CARDS */}
+                <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full z-10 px-4">
+                    {listaServicos.map((servico, index) => {
+                        const IconComponent = servico.icon;
+                        return (
+                            <div
+                                key={index}
+                                onClick={() => setSelectedService(servico)}
+                                // 1. Bordas ajustadas para [32px] 2. Padding aumentado para p-10 3. Border sutil fixa
+                                className="group bg-white p-10 rounded-[32px] transition-all duration-500 hover:bg-[#553C6A] hover:-translate-y-3 cursor-pointer shadow-[0_10px_30px_-15px_rgba(85,60,106,0.1)] hover:shadow-[0_30px_60px_-12px_rgba(85,60,106,0.3)] flex flex-col h-full border border-gray-100/80 active:scale-95 relative overflow-hidden"
+                            >
+                                {/* Efeito de brilho sutil no hover */}
+                                <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-full -mr-10 -mt-10 transition-all group-hover:bg-white/10" />
+
+                                {/* CONTAINER DO ÍCONE - Maior e mais visível */}
+                                <div className="w-16 h-16 bg-[#F6EEF5] rounded-2xl flex items-center justify-center mb-10 group-hover:bg-white/20 transition-all duration-500">
+                                    <IconComponent size={30} strokeWidth={1.2} className="text-[#6E5483] group-hover:text-white transition-colors duration-500" />
+                                </div>
+
+                                {/* TÍTULO - Aumentado para 2xl e com tracking mais justo */}
+                                <h3 className="text-2xl font-bold text-[#1D1A1F] group-hover:text-white transition-colors duration-300 mb-4 leading-tight tracking-tight">
+                                    {servico.title}
+                                </h3>
+
+                                {/* DESCRIÇÃO - Aumentada para base (16px) para melhor leitura */}
+                                <p className="text-gray-500 group-hover:text-white/80 transition-colors duration-300 text-base leading-relaxed grow">
+                                    {servico.desc}
+                                </p>
+
+                                {/* RODAPÉ DO CARD */}
+                                <div className="mt-10 pt-8 border-t border-gray-50 group-hover:border-white/10 flex items-center justify-between">
+                                    <span className="text-[#6E5483] group-hover:text-white font-bold text-[11px] uppercase tracking-[2px] transition-colors">
+                                        Explorar Detalhes
+                                    </span>
+                                    <div className="w-10 h-10 rounded-xl bg-gray-50 flex items-center justify-center group-hover:bg-white/20 transition-all duration-500">
+                                        <MoveRight size={20} className="text-[#6E5483] group-hover:text-white transform group-hover:translate-x-1 transition-all" />
+                                    </div>
+                                </div>
                             </div>
-
-                            <h3 className="text-2xl font-bold text-[#553C6A] group-hover:text-white transition-colors duration-300 mb-4 leading-tight">
-                                {servico.title}
-                            </h3>
-
-                            <p className="text-gray-500 group-hover:text-white/70 transition-colors duration-300 text-base leading-relaxed grow">
-                                {servico.desc}
-                            </p>
-
-                            {/* Indicador de Ação Sutil */}
-                            <div className="mt-12 flex items-center gap-3 text-[#6E5483] group-hover:text-white font-bold text-[10px] uppercase tracking-[2px] opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-[-10px] group-hover:translate-x-0">
-                                Saiba mais
-                                <span className="w-8 h-px bg-current"></span>
-                            </div>
-                        </div>
-                    ))}
+                        );
+                    })}
                 </div>
             </div>
+
+            {/* =========================================================
+               O MODAL "CLEAN" (Renderização Condicional)
+            ========================================================== */}
+            {selectedService !== null && (
+                <div
+                    /* Fundo Desfocado (Overlay) com animação suave */
+                    className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-[#1D1A1F]/60 backdrop-blur-sm transition-opacity duration-300"
+                    onClick={() => setSelectedService(null)} // Fecha ao clicar no fundo
+                >
+                    {/* Janela do Modal com animação de "pulo" (scale) */}
+                    <div
+                        className="bg-white p-12 md:p-16 rounded-[60px] shadow-2xl max-w-2xl w-full relative border border-[#EEDDF6]/30 animate-modalIn"
+                        onClick={(e) => e.stopPropagation()} // Impede o fechamento ao clicar dentro do modal
+                    >
+                        {/* Botão de Fechar */}
+                        <button
+                            onClick={() => setSelectedService(null)}
+                            className="absolute top-8 right-8 text-gray-400 hover:text-[#553C6A] hover:rotate-90 transition-all"
+                        >
+                            <X size={24} />
+                        </button>
+
+                        {/* Conteúdo do Modal */}
+                        <div className="space-y-10">
+                            {/* Cabeçalho do Modal: Ícone e Título */}
+                            <div className="flex items-center gap-6">
+                                <div className="w-16 h-16 bg-[#F6EEF5] rounded-[24px] flex items-center justify-center">
+                                    <selectedService.icon size={32} strokeWidth={1.5} className="text-[#6E5483]" />
+                                </div>
+                                <div>
+                                    <span className="text-[#6E5483] font-bold text-[10px] uppercase tracking-[2px]">Especialidade</span>
+                                    <h3 className="text-4xl md:text-5xl font-bold text-[#1D1A1F] tracking-tighter leading-tight mt-1">
+                                        {selectedService.title}
+                                    </h3>
+                                </div>
+                            </div>
+
+                            {/* Conteúdo Texto Detalhado */}
+                            <div className="prose prose-sm prose-gray max-w-none space-y-5">
+                                <p className="text-gray-600 text-lg leading-relaxed">
+                                    {selectedService.longDesc}
+                                </p>
+                                <p className="text-gray-500 text-sm italic">
+                                    Nossa equipe coordenada pela Dra. Roseli está pronta para oferecer um atendimento personalizado e acolhedor para você e sua família.
+                                </p>
+                            </div>
+
+                            {/* Botão de CTA (WhatsApp) */}
+                            <a
+                                href="#" // Coloque o link do WhatsApp aqui
+                                target="_blank"
+                                className="inline-flex items-center gap-3 bg-[#553C6A] hover:bg-[#6E5483] text-white px-8 py-5 rounded-full text-sm font-bold uppercase tracking-[2px] shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all w-full md:w-auto"
+                            >
+                                <MessageCircle size={20} />
+                                {selectedService.cta}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            )}
         </section>
     );
 };
