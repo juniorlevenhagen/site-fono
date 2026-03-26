@@ -46,9 +46,6 @@ const Hero = () => {
                         <source src="/videos/5998395-hd_1080_1920_30fps.mp4" type="video/mp4" />
                     </video>
                     <div className="absolute inset-x-0 bottom-8 md:bottom-10 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30">
-                        <span className="bg-[#553C6A] text-white px-5 py-2 rounded-full text-xs font-bold shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                            Agendar Atendimento
-                        </span>
                     </div>
                     <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"></div>
                 </div>
