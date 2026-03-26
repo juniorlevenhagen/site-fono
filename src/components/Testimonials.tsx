@@ -51,23 +51,23 @@ const Testimonials = () => {
             <div className="max-w-full mx-auto px-12 md:px-24 space-y-16">
 
                 {/* CABEÇALHO */}
-                <div className="flex flex-col md:flex-row justify-between items-end gap-8 border-b border-[#EEDDF6]/50 pb-12">
-                    <div className="max-w-2xl space-y-6">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 md:gap-8 border-b border-[#EEDDF6]/50 pb-4 md:pb-12">
+                    <div className="max-w-2xl space-y-4 md:space-y-6">
                         <span className="inline-block bg-[#EEDDF6]/60 px-5 py-2 rounded-full text-[10px] font-bold text-[#553C6A] tracking-[3px] uppercase">
                             Experiências Reais
                         </span>
-                        <h2 className="text-5xl md:text-7xl font-bold text-[#1D1A1F] tracking-tighter leading-[0.95]">
+                        <h2 className="text-4xl md:text-7xl font-bold text-[#1D1A1F] tracking-tighter leading-[0.95]">
                             Vozes que <span className="text-[#6E5483] italic font-medium">Transformamos.</span>
                         </h2>
                     </div>
 
-                    {/* Controles Customizados do Slider */}
-                    <div className="flex gap-4">
-                        <button className="swiper-prev-btn w-14 h-14 rounded-full border border-[#EEDDF6] flex items-center justify-center text-[#553C6A] hover:bg-[#553C6A] hover:text-white transition-all duration-500">
-                            <ChevronLeft size={24} />
+                    {/* Controles do Slider - Escondidos no mobile para limpar o visual se desejar, ou mantidos com gap menor */}
+                    <div className="flex gap-4 pb-2 md:pb-0">
+                        <button className="swiper-prev-btn w-12 h-12 md:w-14 md:h-14 rounded-full border border-[#EEDDF6] flex items-center justify-center text-[#553C6A] hover:bg-[#553C6A] hover:text-white transition-all duration-500 cursor-pointer">
+                            <ChevronLeft size={20} className="md:w-6 md:h-6" />
                         </button>
-                        <button className="swiper-next-btn w-14 h-14 rounded-full border border-[#EEDDF6] flex items-center justify-center text-[#553C6A] hover:bg-[#553C6A] hover:text-white transition-all duration-500">
-                            <ChevronRight size={24} />
+                        <button className="swiper-next-btn w-12 h-12 md:w-14 md:h-14 rounded-full border border-[#EEDDF6] flex items-center justify-center text-[#553C6A] hover:bg-[#553C6A] hover:text-white transition-all duration-500 cursor-pointer">
+                            <ChevronRight size={20} className="md:w-6 md:h-6" />
                         </button>
                     </div>
                 </div>
@@ -82,12 +82,14 @@ const Testimonials = () => {
                             nextEl: '.swiper-next-btn',
                             prevEl: '.swiper-prev-btn',
                         }}
-                        autoplay={{ delay: 5000 }}
+                        autoplay={{ delay: 5000, disableOnInteraction: false }}
                         breakpoints={{
                             768: { slidesPerView: 2 },
-                            1200: { slidesPerView: 3 },
+                            1200: { slidesPerView: 3.5 },
+                            1600: { slidesPerView: 4 }
                         }}
-                        className="pb-20! px-4!" // Padding para a sombra não cortar
+                        // REMOVIDO O PB-20! E ADICIONADO RESPONSIVIDADE
+                        className="pb-2 md:pb-20 px-4"
                     >
                         {depoimentos.map((item, index) => (
                             <SwiperSlide key={index}>
@@ -212,7 +214,7 @@ const Testimonials = () => {
                                                tiver uma altura definida ou for flex-1 dentro de um pai com altura.
                                             */
                                             className="absolute inset-0 w-full h-full border-none"
-                                            title="Formulário de Avaliação Consultorio Dra. Roseli"
+                                            title="Formulário de Avaliação Consultorio Dra."
                                         >
                                             Carregando…
                                         </iframe>

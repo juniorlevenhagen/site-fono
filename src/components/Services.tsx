@@ -1,5 +1,5 @@
-import { useState, type ComponentType } from 'react'; // Importando o hook de estado
-import { Users, Activity, BrainCircuit, Ear, MoveRight, X, MessageCircle } from 'lucide-react'; // Importando novos ícones
+import { useState, type ComponentType } from 'react';
+import { Users, Activity, BrainCircuit, Ear, MoveRight, X, MessageCircle } from 'lucide-react';
 
 type ServiceIcon = ComponentType<{
     size?: number;
@@ -16,10 +16,8 @@ type Service = {
 };
 
 const Services = () => {
-    // ESTADO: Armazena o serviço selecionado para abrir o modal. Começa como 'null'.
     const [selectedService, setSelectedService] = useState<Service | null>(null);
 
-    // Lista de serviços com os componentes de ícone e CONTEÚDO DETALHADO para o modal
     const listaServicos: Service[] = [
         {
             title: "Terapia Pediátrica",
@@ -52,62 +50,56 @@ const Services = () => {
     ];
 
     return (
-        <section className="py-24 px-12 md:px-24 bg-[#FBF8FB] w-full border-t border-[#F6EEF5] relative">
-            <div className="flex flex-col gap-20 w-full">
+        /* Padding responsivo consistente com as outras seções */
+        <section className="py-16 md:py-24 px-6 sm:px-12 md:px-24 bg-white w-full border-t border-[#F6EEF5] relative">
+            <div className="flex flex-col gap-12 md:gap-20 w-full">
 
                 {/* CABEÇALHO DA SEÇÃO */}
-                <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-10 pb-16 border-b border-[#EEDDF6]/50">
-                    <div className="max-w-3xl space-y-6">
-                        <span className="inline-block bg-[#EEDDF6]/60 px-5 py-2 rounded-full text-[10px] font-bold text-[#553C6A] tracking-[3px] uppercase">
+                <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 pb-12 md:pb-16 border-b border-[#EEDDF6]/50">
+                    <div className="max-w-3xl space-y-4 md:space-y-6">
+                        <span className="inline-block bg-[#EEDDF6]/60 px-5 py-2 rounded-full text-[9px] md:text-[10px] font-bold text-[#553C6A] tracking-[2px] md:tracking-[3px] uppercase">
                             Nossas Especialidades
                         </span>
-                        <h2 className="text-5xl md:text-7xl font-bold text-[#1D1A1F] tracking-tighter leading-[0.95]">
-                            Soluções <span className="text-[#6E5483] italic font-medium">Clínicas</span> <br />
+                        <h2 className="text-4xl md:text-7xl font-bold text-[#1D1A1F] tracking-tighter leading-none md:leading-[0.95]">
+                            Soluções <span className="text-[#6E5483] italic font-medium">Clínicas</span> <br className="hidden md:block" />
                             Especializadas.
                         </h2>
-                        <p className="text-gray-500 text-lg leading-relaxed lg:mb-2 max-w-3xl">
+                        <p className="text-gray-500 text-base md:text-lg leading-relaxed max-w-3xl">
                             Ciência e empatia aplicadas à saúde da comunicação em todas as fases da vida.
                         </p>
                     </div>
                 </div>
 
                 {/* GRID DE CARDS */}
-                {/* GRID DE CARDS */}
-                <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full z-10 px-4">
+                <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 w-full z-10">
                     {listaServicos.map((servico, index) => {
                         const IconComponent = servico.icon;
                         return (
                             <div
                                 key={index}
                                 onClick={() => setSelectedService(servico)}
-                                // 1. Bordas ajustadas para [32px] 2. Padding aumentado para p-10 3. Border sutil fixa
-                                className="group bg-white p-10 rounded-[32px] transition-all duration-500 hover:bg-[#553C6A] hover:-translate-y-3 cursor-pointer shadow-[0_10px_30px_-15px_rgba(85,60,106,0.1)] hover:shadow-[0_30px_60px_-12px_rgba(85,60,106,0.3)] flex flex-col h-full border border-gray-100/80 active:scale-95 relative overflow-hidden"
+                                className="group bg-white p-8 md:p-10 rounded-[28px] md:rounded-[32px] transition-all duration-500 hover:bg-[#553C6A] hover:-translate-y-3 cursor-pointer shadow-[0_10px_30px_-15px_rgba(85,60,106,0.1)] hover:shadow-[0_30px_60px_-12px_rgba(85,60,106,0.3)] flex flex-col h-full border border-gray-100/80 active:scale-95 relative overflow-hidden"
                             >
-                                {/* Efeito de brilho sutil no hover */}
                                 <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-full -mr-10 -mt-10 transition-all group-hover:bg-white/10" />
 
-                                {/* CONTAINER DO ÍCONE - Maior e mais visível */}
-                                <div className="w-16 h-16 bg-[#F6EEF5] rounded-2xl flex items-center justify-center mb-10 group-hover:bg-white/20 transition-all duration-500">
-                                    <IconComponent size={30} strokeWidth={1.2} className="text-[#6E5483] group-hover:text-white transition-colors duration-500" />
+                                <div className="w-14 md:w-16 h-16 bg-[#F6EEF5] rounded-2xl flex items-center justify-center mb-8 md:mb-10 group-hover:bg-white/20 transition-all duration-500">
+                                    <IconComponent size={28} strokeWidth={1.2} className="text-[#6E5483] group-hover:text-white transition-colors duration-500" />
                                 </div>
 
-                                {/* TÍTULO - Aumentado para 2xl e com tracking mais justo */}
-                                <h3 className="text-2xl font-bold text-[#1D1A1F] group-hover:text-white transition-colors duration-300 mb-4 leading-tight tracking-tight">
+                                <h3 className="text-xl md:text-2xl font-bold text-[#1D1A1F] group-hover:text-white transition-colors duration-300 mb-3 md:mb-4 leading-tight tracking-tight">
                                     {servico.title}
                                 </h3>
 
-                                {/* DESCRIÇÃO - Aumentada para base (16px) para melhor leitura */}
-                                <p className="text-gray-500 group-hover:text-white/80 transition-colors duration-300 text-base leading-relaxed grow">
+                                <p className="text-gray-500 group-hover:text-white/80 transition-colors duration-300 text-sm md:text-base leading-relaxed grow">
                                     {servico.desc}
                                 </p>
 
-                                {/* RODAPÉ DO CARD */}
-                                <div className="mt-10 pt-8 border-t border-gray-50 group-hover:border-white/10 flex items-center justify-between">
-                                    <span className="text-[#6E5483] group-hover:text-white font-bold text-[11px] uppercase tracking-[2px] transition-colors">
+                                <div className="mt-8 md:mt-10 pt-6 md:pt-8 border-t border-gray-50 group-hover:border-white/10 flex items-center justify-between">
+                                    <span className="text-[#6E5483] group-hover:text-white font-bold text-[10px] md:text-[11px] uppercase tracking-[2px] transition-colors">
                                         Explorar Detalhes
                                     </span>
-                                    <div className="w-10 h-10 rounded-xl bg-gray-50 flex items-center justify-center group-hover:bg-white/20 transition-all duration-500">
-                                        <MoveRight size={20} className="text-[#6E5483] group-hover:text-white transform group-hover:translate-x-1 transition-all" />
+                                    <div className="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-gray-50 flex items-center justify-center group-hover:bg-white/20 transition-all duration-500">
+                                        <MoveRight size={18} className="text-[#6E5483] group-hover:text-white transform group-hover:translate-x-1 transition-all" />
                                     </div>
                                 </div>
                             </div>
@@ -116,58 +108,51 @@ const Services = () => {
                 </div>
             </div>
 
-            {/* =========================================================
-               O MODAL "CLEAN" (Renderização Condicional)
-            ========================================================== */}
+            {/* MODAL RESPONSIVO */}
             {selectedService !== null && (
                 <div
-                    /* Fundo Desfocado (Overlay) com animação suave */
-                    className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-[#1D1A1F]/60 backdrop-blur-sm transition-opacity duration-300"
-                    onClick={() => setSelectedService(null)} // Fecha ao clicar no fundo
+                    className="fixed inset-0 z-50 flex items-end md:items-center justify-center p-0 md:p-6 bg-[#1D1A1F]/60 backdrop-blur-sm transition-opacity duration-300"
+                    onClick={() => setSelectedService(null)}
                 >
-                    {/* Janela do Modal com animação de "pulo" (scale) */}
                     <div
-                        className="bg-white p-12 md:p-16 rounded-[60px] shadow-2xl max-w-2xl w-full relative border border-[#EEDDF6]/30 animate-modalIn"
-                        onClick={(e) => e.stopPropagation()} // Impede o fechamento ao clicar dentro do modal
+                        className="bg-white p-8 md:p-16 rounded-t-[40px] md:rounded-[60px] shadow-2xl max-w-2xl w-full relative border border-[#EEDDF6]/30 animate-modalIn max-h-[90vh] overflow-y-auto"
+                        onClick={(e) => e.stopPropagation()}
                     >
-                        {/* Botão de Fechar */}
+                        {/* Botão de Fechar com área de toque maior no mobile */}
                         <button
                             onClick={() => setSelectedService(null)}
-                            className="absolute top-8 right-8 text-gray-400 hover:text-[#553C6A] hover:rotate-90 transition-all"
+                            className="absolute top-6 right-6 md:top-8 md:right-8 text-gray-400 hover:text-[#553C6A] p-2 transition-all"
                         >
-                            <X size={24} />
+                            <X size={28} className="w-7 h-7 md:w-6 md:h-6" />
                         </button>
 
-                        {/* Conteúdo do Modal */}
-                        <div className="space-y-10">
-                            {/* Cabeçalho do Modal: Ícone e Título */}
-                            <div className="flex items-center gap-6">
-                                <div className="w-16 h-16 bg-[#F6EEF5] rounded-[24px] flex items-center justify-center">
-                                    <selectedService.icon size={32} strokeWidth={1.5} className="text-[#6E5483]" />
+                        <div className="space-y-8 md:space-y-10">
+                            <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6">
+                                <div className="w-14 h-14 md:w-16 md:h-16 bg-[#F6EEF5] rounded-[20px] md:rounded-[24px] flex items-center justify-center shrink-0">
+                                    <selectedService.icon strokeWidth={1.5} className="w-7 h-7 md:w-8 md:h-8 text-[#6E5483]" />
                                 </div>
                                 <div>
-                                    <span className="text-[#6E5483] font-bold text-[10px] uppercase tracking-[2px]">Especialidade</span>
-                                    <h3 className="text-4xl md:text-5xl font-bold text-[#1D1A1F] tracking-tighter leading-tight mt-1">
+                                    <span className="text-[#6E5483] font-bold text-[9px] md:text-[10px] uppercase tracking-[2px]">Especialidade</span>
+                                    <h3 className="text-3xl md:text-5xl font-bold text-[#1D1A1F] tracking-tighter leading-tight mt-1">
                                         {selectedService.title}
                                     </h3>
                                 </div>
                             </div>
 
-                            {/* Conteúdo Texto Detalhado */}
-                            <div className="prose prose-sm prose-gray max-w-none space-y-5">
-                                <p className="text-gray-600 text-lg leading-relaxed">
+                            <div className="space-y-4 md:space-y-5">
+                                <p className="text-gray-600 text-base md:text-lg leading-relaxed">
                                     {selectedService.longDesc}
                                 </p>
-                                <p className="text-gray-500 text-sm italic">
-                                    Nossa equipe coordenada pela Dra. Roseli está pronta para oferecer um atendimento personalizado e acolhedor para você e sua família.
+                                <p className="text-gray-400 text-xs md:text-sm italic border-l-2 border-[#F6EEF5] pl-4">
+                                    Nossa equipe coordenada pela Dra. Roseli está pronta para oferecer um atendimento personalizado e acolhedor.
                                 </p>
                             </div>
 
-                            {/* Botão de CTA (WhatsApp) */}
                             <a
-                                href="#" // Coloque o link do WhatsApp aqui
+                                href="https://wa.me/SEUNUMERO"
                                 target="_blank"
-                                className="inline-flex items-center gap-3 bg-[#553C6A] hover:bg-[#6E5483] text-white px-8 py-5 rounded-full text-sm font-bold uppercase tracking-[2px] shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all w-full md:w-auto"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center justify-center gap-3 bg-[#553C6A] hover:bg-[#6E5483] text-white px-8 py-5 rounded-full text-xs md:text-sm font-bold uppercase tracking-[2px] shadow-lg hover:shadow-xl transition-all w-full md:w-auto"
                             >
                                 <MessageCircle size={20} />
                                 {selectedService.cta}
