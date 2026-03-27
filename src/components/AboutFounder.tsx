@@ -81,18 +81,18 @@ const AboutFounder = () => {
                     {/* Bloco 3: Prose/Formação (Order 4 no Mobile) */}
                     <div className="prose prose-gray max-w-3xl order-4 lg:order-0">
                         <p className="text-gray-500 text-sm lg:text-base leading-relaxed">
-                            Especialista em <strong>Fonoaudiologia Hospitalar</strong>,<strong>Disfagia neonatal e adulta</strong>, Roseli dedica sua carreira à reabilitação de funções vitais e ao desenvolvimento da comunicação humana.
-                            Referência em Baependi e região há mais de 22 anos, sua prática abrange desde o cuidado neonatal até o suporte a pacientes com distúrbios neurológicos e neurodegenerativos.
+                            Especialista em <strong>Fonoaudiologia Hospitalar</strong>, <strong>Disfagia neonatal e adulto</strong>, Roseli dedica sua carreira à reabilitação de funções vitais e ao desenvolvimento da comunicação humana.
+                            Referência em Baependi e região há mais de 22 anos.
                         </p>
                     </div>
 
                     {/* Bloco 4: GRID DE QUALIFICAÇÕES (Order 5 no Mobile) */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-8 lg:gap-y-10 gap-x-12 pt-4 order-5 lg:order-0">
                         {[
-                            { label: "Alta Especialização", desc: "Pós-graduada em Disfagia Hospitalar e Neuropsicologia." },
+                            { label: "Alta Especialização", desc: "Pós-graduada em Disfagia Hospitalar." },
                             { label: "Atuação Consolidada", desc: "Referência com consultório particular em Baependi há 22 anos." },
                             { label: "Trajetória Pública", desc: "17 anos de atuação na rede pública e atendimentos via NASF." },
-                            { label: "Experiência APAE", desc: "7 anos dedicados à reabilitação na APAE de Lambari-MG." }
+                            { label: "Experiência APAE", desc: "7 anos dedicados à reabilitação na APAE de Lambari-MG, atendendo atualmente APAE de Caxambu-MG." }
                         ].map((item, i) => (
                             <div key={i} className="space-y-2 border-l-2 border-[#F6EEF5] pl-6 hover:border-[#6E5483] transition-colors duration-500">
                                 <h4 className="font-bold text-[#1D1A1F] text-[10px] lg:text-xs uppercase tracking-widest">{item.label}</h4>

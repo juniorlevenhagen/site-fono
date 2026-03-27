@@ -1,5 +1,5 @@
 import { useState, type ComponentType } from 'react';
-import { Users, Activity, BrainCircuit, Ear, MoveRight, X, MessageCircle } from 'lucide-react';
+import { Users, Activity, BrainCircuit, MoveRight, X, MessageCircle } from 'lucide-react';
 
 type ServiceIcon = ComponentType<{
     size?: number;
@@ -28,7 +28,7 @@ const Services = () => {
         },
         {
             title: "Reabilitação Adulta",
-            desc: "Suporte especializado para recuperação pós-AVC, TCE e distúrbios neurodegenerativos.",
+            desc: "Suporte especializado para recuperação.",
             longDesc: "Recuperar a autonomia na comunicação é vital após eventos como AVC ou traumatismos. Oferecemos terapia especializada para reabilitar a fala, linguagem e deglutição, adaptando o tratamento às necessidades de cada paciente. Nosso objetivo é devolver a qualidade de vida e a capacidade de expressão no dia a dia.",
             icon: Activity,
             cta: "Solicitar Plano de Reabilitação"
@@ -41,11 +41,13 @@ const Services = () => {
             cta: "Marcar Consulta Funcional"
         },
         {
-            title: "Audição",
-            desc: "Avaliação e treino das habilidades auditivas e do processamento central.",
-            longDesc: "Ouvir bem é diferente de entender bem. Avaliamos e treinamos o Processamento Auditivo Central (PAC), ajudando o cérebro a interpretar melhor os sons. Ideal para quem sente dificuldade de foco em ambientes barulhentos ou tem atrasos de aprendizado. Treinar a audição é potencializar a comunicação e o aprendizado.",
-            icon: Ear,
-            cta: "Agendar Treino Auditivo"
+
+            title: "Linguagem e Escrita",
+            desc: "Suporte especializado em dificuldades de alfabetização, leitura e escrita.",
+            longDesc: "A fonoaudiologia desempenha um papel crucial no sucesso escolar. Trabalhamos no desenvolvimento das habilidades necessárias para a alfabetização, auxiliando crianças com dificuldades de leitura, trocas de letras na escrita e compreensão de textos. O objetivo é dar fluência à comunicação escrita e fortalecer o aprendizado.",
+            icon: BrainCircuit, // Pode usar o BrainCircuit ou BookOpen se tiver importado
+            cta: "Agendar Avaliação Escolar"
+
         }
     ];
 
