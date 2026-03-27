@@ -8,6 +8,7 @@ import Resources from "./components/Resources"
 import Footer from "./components/Footer"
 import Reveal from "./components/Reveal"
 import WhatsAppButton from "./components/WhatsAppButton"
+import Galeria from "./components/Galeria"
 
 function App() {
   return (
@@ -34,6 +35,12 @@ function App() {
         <div id="servicos" className="scroll-mt-55">
           <Reveal>
             <Services />
+          </Reveal>
+        </div>
+
+        <div>
+          <Reveal>
+            <Galeria/>
           </Reveal>
         </div>
 
