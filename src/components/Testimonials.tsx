@@ -47,7 +47,7 @@ const Testimonials = () => {
     ];
 
     return (
-        <section className="py-24 bg-[#FBF8FB] w-full border-t border-[#F6EEF5] overflow-hidden">
+        <section className="py-24 bg-[#ffffff] w-full border-t border-[#F6EEF5] overflow-hidden">
             <div className="max-w-full mx-auto px-12 md:px-24 space-y-16">
 
                 {/* CABEÇALHO */}
@@ -93,7 +93,7 @@ const Testimonials = () => {
                     >
                         {depoimentos.map((item, index) => (
                             <SwiperSlide key={index}>
-                                <div className="bg-white p-12 rounded-[50px] shadow-[0_20px_50px_-15px_rgba(85,60,106,0.06)] border border-[#F6EEF5]/50 flex flex-col justify-between h-[400px] relative group hover:border-[#6E5483]/30 transition-all duration-700">
+                                <div className="bg-[#FBF8FB] p-12 rounded-[50px] shadow-[0_20px_50px_-15px_rgba(85,60,106,0.06)] border border-[#F6EEF5]/50 flex flex-col justify-between h-[400px] relative group hover:border-[#6E5483]/30 transition-all duration-700">
                                     <Quote className="absolute top-10 right-12 text-[#F6EEF5] group-hover:text-[#EEDDF6] transition-colors" size={50} />
 
                                     <div className="space-y-8 relative z-10">

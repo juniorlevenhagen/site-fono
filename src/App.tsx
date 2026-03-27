@@ -22,7 +22,7 @@ function App() {
         </div>
 
         {/* SOBRE - Combinando Lifespan e Founder no mesmo ID para o menu */}
-        <div id="sobre" className="scroll-mt-55">
+        <div id="sobre" className="scroll-mt-55 md:scroll-mt-10">
           <Reveal>
             <AboutLifespan />
           </Reveal>
@@ -32,7 +32,7 @@ function App() {
         </div>
 
         {/* SERVIÇOS */}
-        <div id="servicos" className="scroll-mt-55">
+        <div id="servicos" className="scroll-mt-55 md:scroll-mt-0">
           <Reveal>
             <Services />
           </Reveal>
@@ -50,14 +50,14 @@ function App() {
         </Reveal>
 
         {/* RECURSOS */}
-        <div id="recursos" className="scroll-mt-55">
+        <div id="recursos" className="scroll-mt-55 md:scroll-mt-20">
           <Reveal>
             <Resources />
           </Reveal>
         </div>
 
         {/* CONTATO (Geralmente aponta para o Footer) */}
-        <div id="contato" className="scroll-mt-20">
+        <div id="contato" className="scroll-mt-55 md:scroll-mt-20">
           <Reveal>
             <Footer />
           </Reveal>

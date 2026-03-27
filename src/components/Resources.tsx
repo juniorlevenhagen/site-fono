@@ -20,7 +20,7 @@ const Resources = () => {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     return (
-        <section id="recursos" className="scroll-mt-24 py-24 bg-white">
+        <section id="recursos" className="scroll-mt-24 py-24 bg-[#FBF8FB]">
             <div className="max-w-[1100px] mx-auto px-6">
 
                 {/* Layout em Grid 2 Colunas: Título à esquerda, Conteúdo à direita */}
