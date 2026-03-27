@@ -12,22 +12,22 @@ const Galeria = () => {
 
     const listaFotos: FotoMomento[] = [
         {
-            src: "/public/imagens/galeria01.jpeg",
+            src: "/imagens/galeria01.jpeg",
             alt: "Atendimento lúdico com criança",
             legenda: "Aprender brincando é o nosso segredo."
         },
         {
-            src: "/public/imagens/galeria02.jpeg",
+            src: "/imagens/galeria02.jpeg",
             alt: "Roseli Bernardes e paciente",
             legenda: "Conexão e confiança em cada sessão."
         },
         {
-            src: "/public/imagens/galeria03.jpeg",
+            src: "/imagens/galeria03.jpeg",
             alt: "Exercício de motricidade orofacial",
             legenda: "Resultados que transformam sorrisos."
         },
         {
-            src: "/public/imagens/galeria04.jpeg",
+            src: "/imagens/galeria04.jpeg",
             alt: "Criança feliz no atendimento",
             legenda: "A alegria de se comunicar com clareza."
         }
