@@ -50,7 +50,7 @@ const Hero = () => {
                         preload="auto"
                         className="w-full h-full object-cover"
                     >
-                        <source src="/videos/25998395-hd_1080_1920_30fps.mp4" type="video/mp4" />
+                        <source src="/videos/fono01.mp4" type="video/mp4" />
                     </video>
                     <div className="absolute inset-x-0 bottom-8 md:bottom-10 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30">
                     </div>
