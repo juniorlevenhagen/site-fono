@@ -101,7 +101,7 @@ const Hero = () => {
                 </a>
                 <a
                     href="#servicos"
-                    className="border-2 border-[#553C6A] text-[#553C6A] px-7 py-4 rounded-full font-bold text-center"
+                    className="border-2 border-[#553C6A] text-[#553C6A] px-7 py-4 rounded-full font-bold text-center scroll-mt-55 md:scroll-mt-0"
                 >
                     Nossos Serviços
                 </a>
