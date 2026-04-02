@@ -30,20 +30,8 @@ const Testimonials = () => {
             categoria: "Reabilitação Adulta",
             estrelas: 5
         },
-        {
-            paciente: "Sr. Geraldo",
-            responsavel: "", // No caso de adulto, o responsável fica vazio
-            relato: "Recuperei minha clareza na fala após meses de dedicação. O consultório em Baependi é impecável e o atendimento nota mil.",
-            categoria: "Reabilitação Adulta",
-            estrelas: 5
-        },
-        {
-            paciente: "Sr. Geraldo",
-            responsavel: "", // No caso de adulto, o responsável fica vazio
-            relato: "Recuperei minha clareza na fala após meses de dedicação. O consultório em Baependi é impecável e o atendimento nota mil.",
-            categoria: "Reabilitação Adulta",
-            estrelas: 5
-        },
+        
+        
     ];
 
     return (
